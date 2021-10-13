@@ -51,8 +51,8 @@ const apiFetchGet = async () => {
 server.listen(process.env.PORT, ()=>{
     console.log(`Rodando no endereço:  ${process.env.DATABASE}`)  
     
-    cron.schedule(`0 0 0 0 *`, function() {  
-        apiFetchGet()                        
+    cron.schedule(`00 30 11 * * 0-6`, function() {                          
+        apiFetchGet()
     });   
             
 });
