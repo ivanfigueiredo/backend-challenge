@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "jest": {
+    "collectCoverage": true,
+    "verbose": true
+  },
+  "version": "1.0.0",
+  "description": "backend-challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "startdev": "nodemon App.js",
+    "test": "jest --watch --runInBand --detectOpenHandles ./tests"
+  },
+  "author": "Ivan Figueiredo",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jest": "^27.2.4",
+    "mongoose": "^6.0.10",
+    "mongoose-paginate": "^5.0.3",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.13"
+  }
+}
