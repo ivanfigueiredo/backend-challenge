@@ -12,7 +12,13 @@ mongoose.connection.on('error', (error) => {
 
 const server = express();
 
-server.use(cors({}));
+server.use(cors(
+    {
+        "origin": "*",
+        "methods": "GET, PUT, POST, DELETE",
+        "allowedHeaders": "Content-Type, Accept, Authorization"
+    }
+));
 server.use(express.json());
 server.use(express.urlencoded({extended: true}));
 
