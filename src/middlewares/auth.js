@@ -6,7 +6,7 @@ const KEY = bcrypt.hashSync(`${process.env.API_KEY}`, 10);
 module.exports = {
     private: async (req, res, next) => {
         if(!req.headers.authorization){
-            res.json({notallowed: true});
+            res.status(401).send('notallowed');
             return;
         }
         
@@ -16,14 +16,13 @@ module.exports = {
         }
 
         if(key == ''){
-            res.json({notallowed: true});
+            res.status(401).send('notallowed');
             return;
         }
 
-        const checkKEY = await bcrypt.compare(key, KEY);
-        console.log(checkKEY);
+        const checkKEY = await bcrypt.compare(key, KEY);        
         if(!checkKEY){
-            res.json({notallowed: true});
+            res.status(401).send('notallowed');
             return;
         }
 
