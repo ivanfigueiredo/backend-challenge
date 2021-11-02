@@ -11,7 +11,7 @@ mongoose.connection.on('error', (error) => {
 });
 
 const server = express();
-
+ 
 server.use(cors(
     {
         "origin": "*",
